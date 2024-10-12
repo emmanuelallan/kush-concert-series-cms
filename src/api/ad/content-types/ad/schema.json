@@ -1,18 +1,20 @@
 {
   "kind": "collectionType",
-  "collectionName": "blogs",
+  "collectionName": "ads",
   "info": {
-    "singularName": "blog",
-    "pluralName": "blogs",
-    "displayName": "blog"
+    "singularName": "ad",
+    "pluralName": "ads",
+    "displayName": "ad"
   },
   "options": {
-    "draftAndPublish": true,
-    "populateCreatorFields": true
+    "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
     "title": {
+      "type": "string"
+    },
+    "link": {
       "type": "string"
     },
     "cover_image": {
@@ -24,9 +26,6 @@
       ],
       "type": "media",
       "multiple": false
-    },
-    "content": {
-      "type": "blocks"
     }
   }
 }

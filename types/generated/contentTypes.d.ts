@@ -788,6 +788,30 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
+export interface ApiAdAd extends Schema.CollectionType {
+  collectionName: 'ads';
+  info: {
+    singularName: 'ad';
+    pluralName: 'ads';
+    displayName: 'ad';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    link: Attribute.String;
+    cover_image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::ad.ad', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::ad.ad', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 export interface ApiBlogBlog extends Schema.CollectionType {
   collectionName: 'blogs';
   info: {
@@ -797,6 +821,7 @@ export interface ApiBlogBlog extends Schema.CollectionType {
   };
   options: {
     draftAndPublish: true;
+    populateCreatorFields: true;
   };
   attributes: {
     title: Attribute.String;
@@ -805,10 +830,8 @@ export interface ApiBlogBlog extends Schema.CollectionType {
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
+    createdBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'>;
+    updatedBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'>;
   };
 }
 
@@ -1030,6 +1053,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
+      'api::ad.ad': ApiAdAd;
       'api::blog.blog': ApiBlogBlog;
       'api::contact.contact': ApiContactContact;
       'api::event.event': ApiEventEvent;
