@@ -4,17 +4,17 @@
   "info": {
     "singularName": "social",
     "pluralName": "socials",
-    "displayName": "social"
+    "displayName": "Social"
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "title": {
+    "link": {
       "type": "string"
     },
-    "link": {
+    "title": {
       "type": "string"
     },
     "icon": {

@@ -1,43 +1,42 @@
 {
   "kind": "collectionType",
-  "collectionName": "events",
+  "collectionName": "directories",
   "info": {
-    "singularName": "event",
-    "pluralName": "events",
-    "displayName": "Event"
+    "singularName": "directory",
+    "pluralName": "directories",
+    "displayName": "Directory",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "title": {
+    "name": {
       "type": "string"
     },
-    "description": {
-      "type": "text"
-    },
-    "location": {
+    "role": {
       "type": "string"
     },
     "cover_image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
-    "link": {
+    "phone": {
       "type": "string"
     },
-    "date": {
-      "type": "datetime"
+    "email": {
+      "type": "string"
     },
-    "price": {
-      "type": "integer"
+    "description": {
+      "type": "text"
     }
   }
 }
