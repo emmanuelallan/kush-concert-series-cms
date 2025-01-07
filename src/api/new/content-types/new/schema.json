@@ -1,11 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "blogs",
+  "collectionName": "news",
   "info": {
-    "singularName": "blog",
-    "pluralName": "blogs",
-    "displayName": "Blog",
-    "description": ""
+    "singularName": "new",
+    "pluralName": "news",
+    "displayName": "New"
   },
   "options": {
     "draftAndPublish": true
@@ -19,15 +18,14 @@
       "type": "blocks"
     },
     "cover_image": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ]
+      ],
+      "type": "media",
+      "multiple": false
     },
     "category": {
       "type": "relation",
